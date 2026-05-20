@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import "tailwindcss";
+
+:root {
+  --brand-primary: #ff8600;
+  --text-primary: #5b6871;
+  --link-text: var(--brand-primary);
+  --card-bg: #ffffff;
+  --page-bg: #f8fafc;
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Mulish", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: var(--page-bg);
+}
