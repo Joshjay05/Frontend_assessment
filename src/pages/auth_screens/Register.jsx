@@ -1,4 +1,4 @@
-import { Mail, MessageCircleCheck } from "lucide-react";
+import { Mail } from "lucide-react";
 import AuthLayout from "../../components/layout/AuthLayout";
 import { NavLink } from "react-router-dom";
 // import { FcGoogle } from "react-icons/fc";
@@ -17,7 +17,7 @@ const Register = () => {
 
         <div className="flex flex-col gap-3">
           <button
-            className="flex items-center justify-center gap-3 w-full border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            className="flex items-center justify-center gap-3 w-full border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer"
             onClick={handleNavigate}
           >
             <Mail className="w-5 h-5 text-gray-800" />
@@ -30,7 +30,7 @@ const Register = () => {
             <hr className="flex-1 border-gray-200" />
           </div>
 
-          <button className="flex items-center justify-center gap-3 w-full border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+          <button className="flex items-center justify-center gap-3 w-full border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer">
             {/* <FcGoogle /> */}
             Sign up with Google
           </button>
@@ -57,13 +57,6 @@ const Register = () => {
           </NavLink>
         </p>
       </div>
-      <div className="absolute bottom-0 left-0 w-full h-full  from-[#F8FAFC] to-[#F8FAFC]/0 pointer-events-none" />
-      <p className="fixed bg-[#FF8600] bottom-0.5 right-10 z-50 shadow-lg rounded-full px-2 py-2 text-white flex items-center gap-2 cursor-pointer hover:bg-[#FF8600]/90 transition-colors">
-        Get Help
-        <span>
-          <MessageCircleCheck className="w-4 h-4" />
-        </span>
-      </p>
     </AuthLayout>
   );
 };

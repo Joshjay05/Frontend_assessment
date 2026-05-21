@@ -4,7 +4,7 @@ export const FormField = forwardRef(
   (
     {
       label,
-      labelExtra,
+      additionalLabel,
       leftIcon,
       rightIcon,
       focused,
@@ -19,12 +19,19 @@ export const FormField = forwardRef(
 
     return (
       <div className={`flex flex-col gap-1 ${className}`}>
-        {label && (
-          <label className="text-xs text-gray-500 flex items-center gap-1">
-            {label}
-            {labelExtra}
-          </label>
-        )}
+        <div className="min-h-6">
+          {label && (
+            <label
+              className={`
+        text-xs flex items-center gap-1 transition-all duration-200
+        ${isActive ? "opacity-100 text-[#5B6871]" : "opacity-0 text-sm leading-6"}
+      `}
+            >
+              {label}
+              {additionalLabel}
+            </label>
+          )}
+        </div>
 
         <div
           className={`flex items-center gap-2 border rounded-lg px-3 py-2.5 transition-all duration-150
@@ -38,7 +45,7 @@ export const FormField = forwardRef(
         >
           {leftIcon && (
             <span
-              className={`shrink-0 transition-colors ${isActive ? "text-[#FF8600]" : "text-gray-300"}`}
+              className={`shrink-0 transition-colors text-[#B0BABF] h-6 w-6}`}
             >
               {leftIcon}
             </span>
@@ -46,7 +53,7 @@ export const FormField = forwardRef(
 
           <input
             ref={ref}
-            className="w-full text-sm outline-none bg-transparent text-gray-700 placeholder:text-gray-300"
+            className="w-full text-sm outline-none bg-transparent text-gray-700 placeholder:text-[#5B6871] placeholder:text-sm font-normal leading-6"
             {...inputProps}
           />
 
