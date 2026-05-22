@@ -16,4 +16,5 @@ body {
   font-family: "Mulish", ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   background: var(--page-bg);
+  overflow-x: hidden;
 }

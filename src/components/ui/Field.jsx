@@ -4,7 +4,7 @@ export const FormField = forwardRef(
   (
     {
       label,
-      labelExtra,
+      additionalLabel,
       leftIcon,
       rightIcon,
       focused,
@@ -18,16 +18,31 @@ export const FormField = forwardRef(
     const isActive = focused || hasValue;
 
     return (
-      <div className={`flex flex-col gap-1 ${className}`}>
+      <div className={`flex flex-col ${className}`}>
+        {/* Dynamic Label Wrapper: Completely collapses to 0px height when inactive */}
         {label && (
-          <label className="text-xs text-gray-500 flex items-center gap-1">
-            {label}
-            {labelExtra}
-          </label>
+          <div
+            className={`grid transition-all duration-200 ease-out ${
+              isActive
+                ? "grid-rows-[1fr] opacity-100 mb-1"
+                : "grid-rows-[0fr] opacity-0 mb-0"
+            }`}
+          >
+            <div className="overflow-hidden min-h-0 text-xs text-[#5B6871] font-medium flex items-center gap-1">
+              <span
+                className={`transition-transform duration-200 inline-block ${
+                  isActive ? "translate-y-0" : "translate-y-2"
+                }`}
+              >
+                {label}
+              </span>
+              {additionalLabel}
+            </div>
+          </div>
         )}
 
         <div
-          className={`flex items-center gap-2 border rounded-lg px-3 py-2.5 transition-all duration-150
+          className={`flex items-center gap-2 border rounded-lg px-3 py-2.5 transition-all duration-150 cursor-pointer 
           ${
             error
               ? "border-red-400 ring-1 ring-red-400/20"
@@ -37,20 +52,22 @@ export const FormField = forwardRef(
           }`}
         >
           {leftIcon && (
-            <span
-              className={`shrink-0 transition-colors ${isActive ? "text-[#FF8600]" : "text-gray-300"}`}
-            >
+            <span className="shrink-0 text-[#B0BABF] h-6 w-6 flex items-center justify-center">
               {leftIcon}
             </span>
           )}
 
           <input
             ref={ref}
-            className="w-full text-sm outline-none bg-transparent text-gray-700 placeholder:text-gray-300"
+            className="w-full text-sm outline-none bg-transparent text-gray-700 placeholder:text-[#5B6871] placeholder:text-sm font-normal leading-6"
             {...inputProps}
           />
 
-          {rightIcon && <span className="shrink-0">{rightIcon}</span>}
+          {rightIcon && (
+            <span className="shrink-0 flex items-center justify-center">
+              {rightIcon}
+            </span>
+          )}
         </div>
 
         {error && <p className="text-xs text-red-500 mt-0.5">{error}</p>}
