@@ -53,10 +53,10 @@ const OTPInput = ({ value, onChange, disabled }) => {
             onFocus={() => setFocusedIndex(i)}
             onBlur={() => setFocusedIndex(null)}
             className={`
-             w-16 h-16 text-center text-2xl font-bold text-gray-700
+             w-12 h-12 text-center text-2xl font-bold text-gray-700
               transition-all duration-150
               disabled:opacity-50 disabled:cursor-not-allowed
-               border rounded-xl outline-none focus:border-[#FF8600] focus:ring-1 focus:ring-[#FF8600] transition-al
+               border rounded-xl outline-none focus:border-[#FF8600] focus:ring-1 focus:ring-[#FF8600] 
               ${
                 isActive
                   ? "border-[#FF8600] ring-1 ring-[#FF8600]/20"

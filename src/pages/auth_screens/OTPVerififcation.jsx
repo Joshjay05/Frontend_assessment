@@ -34,12 +34,12 @@ const OTPVerification = () => {
   const errMessage = verifyError?.message;
 
   return (
-    <AuthLayout>
-      <div className="bg-white rounded-xl shadow-md border border-gray-100 p-10 sm:p-12 w-full max-w-110">
+    <AuthLayout showHelp={false}>
+      <div className="bg-white rounded-xl shadow-md border border-gray-100 p-10 sm:p-12 w-full max-w-110 h-full max-h-106 sm:h-auto flex flex-col items-start text-left gap-6">
         <h1 className="font-bold text-[28px] text-gray-900 mb-2">
           Verify your email
         </h1>
-        <p className="text-[15px] text-[#5B6871] mb-10 leading-relaxed">
+        <p className="text-[15px] text-[#5B6871] mb-3 leading-relaxed">
           A four digit OTP code has been sent to your email <br />
           <span className="text-[#FF8600]">{email}</span>
         </p>
@@ -64,13 +64,13 @@ const OTPVerification = () => {
 
           <Button
             type="submit"
-            className="w-55 h-12 bg-[#FF8600] hover:bg-[#e67900] text-white rounded-lg font-medium text-[15px] transition-colors my-8 disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-55 h-12 bg-[#FF8600] hover:bg-[#e67900] text-white rounded-lg font-medium text-[15px] transition-colors  disabled:opacity-60 disabled:cursor-not-allowed"
             disabled={code.length < 4 || isPending}
           >
             {isPending ? "Verifying..." : "Confirm code"}
           </Button>
 
-          <p className="text-[15px] text-[#5B6871]">
+          <p className="text-[15px] text-[#5B6871] my-4">
             Didn't get the mail?{" "}
             <button
               type="button"

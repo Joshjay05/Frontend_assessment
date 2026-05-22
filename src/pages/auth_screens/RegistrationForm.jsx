@@ -67,7 +67,7 @@ const RegisterationForm = () => {
         </p>
 
         <form onSubmit={handleSubmit} noValidate>
-          <div className="flex gap-3 mb-4">
+          <div className="grid grid-cols-2 gap-3 mb-4 items-end">
             <FormField
               className="flex-1"
               label="First Name"

@@ -1,28 +1,34 @@
 import { useNavigate } from "react-router-dom";
 import AuthLayout from "../../components/layout/AuthLayout";
 import Button from "../../components/ui/Button";
-import { MailCheck } from "lucide-react";
 
+import verified from "../../assets/verified.png";
 const Verified = () => {
   const navigate = useNavigate();
 
   const handleContinue = () => {
-    localStorage.removeItem("pendingEmail"); // clean up
+    localStorage.removeItem("pendingEmail");
     navigate("/login");
   };
 
   return (
-    <AuthLayout>
+    <AuthLayout showHelp={false}>
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 w-full max-w-105 flex flex-col items-center text-center gap-6">
         <div className="relative">
-          <MailCheck className="w-16 h-16 text-gray-400" />
+          <div className="w-18 h-15">
+            <img
+              src={verified}
+              alt="email-verified"
+              className="w-full h-full object-contain"
+            />
+          </div>
         </div>
 
         <div>
           <h1 className="font-bold text-2xl text-gray-900 mb-2">
-            Email verified!
+            Email verified !
           </h1>
-          <p className="text-sm text-[#5B6871] leading-relaxed">
+          <p className="text-sm text-[#5B6871] leading-5">
             The verified email address will be associated with your account.
             Click on the button below to continue.
           </p>
