@@ -24,16 +24,19 @@ const Dashboard = () => {
       <section className="grid grid-cols-1 xl:grid-cols-12 gap-6">
         <article className="xl:col-span-8 flex flex-col gap-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {statsItems.map(({ label, value, icon, iconBg, iconColor }) => (
-              <StatCard
-                key={label}
-                label={label}
-                value={value}
-                icon={icon}
-                iconBg={iconBg}
-                iconColor={iconColor}
-              />
-            ))}
+            {statsItems.map(
+              ({ label, value, icon, iconBg, iconColor, hoverBg }) => (
+                <StatCard
+                  key={label}
+                  label={label}
+                  value={value}
+                  icon={icon}
+                  iconBg={iconBg}
+                  iconColor={iconColor}
+                  hoverBg={hoverBg}
+                />
+              ),
+            )}
           </div>
 
           <div className="bg-white rounded-2xl p-5 shadow-[0_4px_24px_rgba(0,0,0,0.02)]">

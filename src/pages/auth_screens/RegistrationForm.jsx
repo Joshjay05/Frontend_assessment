@@ -1,19 +1,10 @@
 import { useState } from "react";
-import {
-  User,
-  Mail,
-  Lock,
-  Unlock,
-  Eye,
-  EyeOff,
-  Check,
-  Info,
-} from "lucide-react";
+import { User, Mail, Lock, Unlock, Eye, EyeOff, Check } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import AuthLayout from "../../components/layout/AuthLayout";
 import { FormField } from "../../components/ui/Field";
 import { useRegister } from "../../hooks/useAuth";
-
+import info from "../../assets/info.png";
 const PASSWORD_MAX = 15;
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
@@ -97,7 +88,13 @@ const RegisterationForm = () => {
           <FormField
             className="mb-4"
             label="Email"
-            additionalLabel={<Info className="w-4 h-4 text-gray-300" />}
+            additionalLabel={
+              <img
+                src={info}
+                alt="email icon"
+                className="w-4 h-4 text-[#B0BABF]"
+              />
+            }
             type="email"
             placeholder="work mail"
             value={fields.email}

@@ -8,12 +8,12 @@ export const ORANGE = "#FF8600";
 export const LIGHT_ORANGE = "#FFB357";
 
 export const SectionHeader = ({ title, cta, onClick }) => (
-  <div className="flex items-center justify-between mb-4">
+  <div className="flex items-center justify-between mb-4 cursor-pointer">
     <h2 className="text-base font-bold text-gray-900">{title}</h2>
     {cta && (
       <button
         onClick={onClick}
-        className="text-xs font-bold text-[#FF8600] hover:opacity-80 transition-opacity"
+        className="text-xs font-bold text-[#FF8600] hover:opacity-80 transition-opacity cursor-pointer"
       >
         {cta}
       </button>
@@ -27,11 +27,14 @@ export const StatCard = ({
   icon: IconOrImage,
   iconBg,
   iconColor,
+  hoverBg,
 }) => {
   const isImageUrl = typeof IconOrImage === "string";
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 p-5 flex items-center justify-between">
+    <div
+      className={`bg-white  rounded-2xl border border-gray-100 p-5 flex items-center justify-between transition-colors cursor-pointer ${hoverBg}`}
+    >
       <div>
         <p className="text-2xl font-bold text-gray-900">{value}</p>
         <p className="text-xs text-gray-400 mt-1">{label}</p>
@@ -163,22 +166,22 @@ export const MemberCard = ({
   avatarBg = "bg-gray-100",
   avatarText = "text-gray-600",
 }) => (
-  <div className="flex flex-col items-center gap-2 p-3 bg-white rounded-xl border border-gray-100">
+  <div className="flex flex-col items-center gap-2 p-4 bg-white rounded-xl border border-gray-100 w-33 h-40">
     <div
-      className={`w-12 h-12 rounded-full overflow-hidden flex items-center justify-center text-sm font-bold ${avatarBg} ${avatarText}`}
+      className={`w-10 h-10 rounded-full overflow-hidden flex items-center justify-center  text-sm font-bold ${avatarBg} ${avatarText}`}
     >
       {avatar ? (
-        <img src={avatar} alt={name} className="w-full h-full object-cover" />
+        <img src={avatar} alt={name} className="w-full h-full object-center" />
       ) : (
         initials
       )}
     </div>
     <div className="text-center">
-      <p className="text-xs font-bold text-gray-800">{name}</p>
-      <p className="text-[11px] text-gray-400 mt-0.5">{handle}</p>
+      <p className="text-sm font-bold text-[#3B3B45]">{name}</p>
+      <p className="text-[11px] text-[#818187] mt-0.5">{handle}</p>
     </div>
-    <p className="text-xs font-semibold text-emerald-500 flex items-center gap-1">
-      <TrendingUp className="w-3 h-3" />
+    <p className="text-base font-semibold text-[#3B3B45] flex items-center gap-1.5">
+      <TrendingUp className="w-5 h-5" className="text-teal-600" />
       {growth}
     </p>
   </div>

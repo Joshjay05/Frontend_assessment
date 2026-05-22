@@ -2,7 +2,7 @@
 import { createContext, useCallback, useContext, useState } from "react";
 import { getToken } from "../lib/apiClient";
 const AuthContext = createContext(null);
-// import { loginUser } from "../lib/auth";
+
 import { loginUser } from "../lib/authMock";
 
 export const AuthProvider = ({ children }) => {

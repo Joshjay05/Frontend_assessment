@@ -1,4 +1,3 @@
-import { TrendingUp } from "lucide-react";
 import circle from "../assets/circle_layer.png";
 import user from "../assets/user.png";
 import wanda_parker from "../assets/wanda_parker.png";
@@ -12,30 +11,33 @@ import fuel_crisis from "../assets/fuel_crisis.png";
 import facebook from "../assets/facebook.png";
 import insta from "../assets/insta.png";
 import linkedin from "../assets/linkedin.png";
+import trending from "../assets/trending.png";
 export const statsItems = [
   {
     value: "51",
     label: "Total Channels",
     icon: circle,
-    iconBg: "bg-emerald-50 text-emerald-500",
-    iconColor: "text-emerald-500",
+    iconBg: "bg-emerald-50",
+    iconColor: "text-[#E0FAF5]",
+    hoverBg: "hover:bg-[#E0FAF5]",
   },
   {
     value: "125",
     label: "New Members",
     icon: user,
-    iconBg: "bg-indigo-50 text-indigo-500",
-    iconColor: "text-indigo-500",
+    iconBg: "bg-[#EFF2FE]",
+    iconColor: "text-[#EFF2FE]",
+    hoverBg: "hover:bg-[#EFF2FE]",
   },
   {
     value: "789",
     label: "All Impressions",
-    icon: TrendingUp,
-    iconBg: "bg-orange-50 text-orange-500",
-    iconColor: "text-orange-500",
+    icon: trending,
+    iconBg: "bg-[#FFF0E0]",
+    iconColor: "text-[#FFF0E0]",
+    hoverBg: "hover:bg-[#FFF0E0]",
   },
 ];
-
 export const trendingPosts = [
   {
     id: 1,

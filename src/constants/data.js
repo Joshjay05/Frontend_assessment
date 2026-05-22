@@ -1,7 +1,7 @@
 const MOCK_USER = {
   first_name: "Jesulona",
   last_name: "Odelade",
-  email: "jesulonaOdelade@gmail.com",
+  email: "jesulonaOdelade@yopmail.com",
   password: "securePass123",
 };
 

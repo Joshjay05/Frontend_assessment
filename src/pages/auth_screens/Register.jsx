@@ -1,7 +1,7 @@
-import { Mail } from "lucide-react";
 import AuthLayout from "../../components/layout/AuthLayout";
 import { NavLink } from "react-router-dom";
-// import { FcGoogle } from "react-icons/fc";
+import mail from "../../assets/mail.png";
+import google from "../../assets/google.png";
 import { useNavigate } from "react-router-dom";
 const Register = () => {
   const navigate = useNavigate();
@@ -17,10 +17,10 @@ const Register = () => {
 
         <div className="flex flex-col gap-3">
           <button
-            className="flex items-center justify-center gap-3 w-full border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer"
+            className="flex items-center justify-center gap-3 w-full border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-700 hover:bg-[#4399FF]/10 transition-colors cursor-pointer"
             onClick={handleNavigate}
           >
-            <Mail className="w-5 h-5 text-gray-800" />
+            <img src={mail} alt="Google Logo" className="w-5 h-5" />
             Sign up with email
           </button>
 
@@ -30,8 +30,8 @@ const Register = () => {
             <hr className="flex-1 border-gray-200" />
           </div>
 
-          <button className="flex items-center justify-center gap-3 w-full border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer">
-            {/* <FcGoogle /> */}
+          <button className="flex items-center justify-center gap-3 w-full border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-700 hover:bg-[#4399FF]/10 transition-colors cursor-pointer">
+            <img src={google} alt="Google Logo" className="w-5 h-5" />
             Sign up with Google
           </button>
         </div>

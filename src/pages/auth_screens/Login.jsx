@@ -44,7 +44,7 @@ const Login = () => {
 
   return (
     <AuthLayout>
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 w-full max-w-[420px]">
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 w-full max-w-105">
         <h1 className="font-bold text-2xl text-gray-900">
           Log in to your account
         </h1>
